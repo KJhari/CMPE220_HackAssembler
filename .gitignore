@@ -1,0 +1,36 @@
+# Compiled object files
+*.o
+*.obj
+*.so
+*.lo
+
+# Compiled executables
+main
+main.exe
+
+# Debug files
+*.dSYM/
+*.pdb
+
+# Build directories
+build/
+out/
+
+# Dependency directories
+node_modules/
+
+# Editor backups
+*~
+*.swp
+
+# Log files
+*.log
+
+# Other files that should not be committed
+.DS_Store
+Thumbs.db
+
+# Custom directories
+# Add any directories you don't want to track, e.g.,
+# bin/
+# lib/
