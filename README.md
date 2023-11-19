@@ -25,3 +25,22 @@ Translates Hack assembly code into binary machine code.
 Handles labels and variable symbols.
 Provides error messages with line numbers for easier debugging of assembly code.
 Supports comments and whitespace in assembly files for better readability.
+
+## Project Structure
+
+HackAssembler/ <br />
+│<br />
+├── src<br />
+│ &nbsp; ├── Assembler.cpp<br />
+│ &nbsp; ├── Code.cpp<br />
+│ &nbsp; ├── Parser.cpp<br />
+│ &nbsp; ├── TableLookup.cpp<br />
+│ &nbsp; └── Utility.cpp<br />
+├── include<br />
+│ &nbsp; ├── Assembler.h<br />
+│ &nbsp; ├── Code.h<br />
+│ &nbsp; ├── Parser.h<br />
+│ &nbsp; ├── TableLookup.h<br />
+│ &nbsp; └── Utility.h<br />
+├── Makefile<br />
+└── README.md<br />
