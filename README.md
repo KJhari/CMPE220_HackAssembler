@@ -26,7 +26,7 @@ Handles labels and variable symbols.
 Provides error messages with line numbers for easier debugging of assembly code.
 Supports comments and whitespace in assembly files for better readability.
 
-
+#Project Structure
 HackAssembler/
 │
 ├── src/                        # Source files
@@ -43,12 +43,13 @@ HackAssembler/
 │   ├── TableLookup.h
 │   └── Utility.h
 │
-├── Programs/                   # Example and test assembly programs
+├── Programs/                   # Assembly test programs
 │   ├── Max.asm
 │   ├── Add.asm
 │   └── ...
 │
-├── Makefile                    # Makefile for compiling the project
-├── README.md                   # Project README
+├── Makefile                    # Makefile for compiling
+├── README.md                   # This README file
 ├── LICENSE                     # License file
 └── .gitignore                  # .gitignore file
+
