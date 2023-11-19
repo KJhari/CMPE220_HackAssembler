@@ -26,30 +26,27 @@ Handles labels and variable symbols.
 Provides error messages with line numbers for easier debugging of assembly code.
 Supports comments and whitespace in assembly files for better readability.
 
-#Project Structure
+##Project Structure
+
 HackAssembler/
 │
-├── src/                        # Source files
-│   ├── Assembler.cpp
-│   ├── Code.cpp
-│   ├── Parser.cpp
-│   ├── TableLookup.cpp
-│   └── Utility.cpp
+├── src/
+│ ├── Assembler.cpp
+│ ├── Code.cpp
+│ ├── Parser.cpp
+│ ├── TableLookup.cpp
+│ └── Utility.cpp
 │
-├── include/                    # Header files
-│   ├── Assembler.h
-│   ├── Code.h
-│   ├── Parser.h
-│   ├── TableLookup.h
-│   └── Utility.h
+├── include/
+│ ├── Assembler.h
+│ ├── Code.h
+│ ├── Parser.h
+│ ├── TableLookup.h
+│ └── Utility.h
 │
-├── Programs/                   # Assembly test programs
-│   ├── Max.asm
-│   ├── Add.asm
-│   └── ...
+├── Programs/
+│ └── Max.asm
 │
-├── Makefile                    # Makefile for compiling
-├── README.md                   # This README file
-├── LICENSE                     # License file
-└── .gitignore                  # .gitignore file
+├── Makefile
+└── README.md
 
