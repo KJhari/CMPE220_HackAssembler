@@ -1,4 +1,6 @@
-// Harikrishnan Kokkanthara Jeevan
+// CMPE 220: SYSTEM SOFTWARE
+// TEAM 1
+// HACK ASSEMBLER
 #include "../include/TableLookup.h"
 
 using std::string;
