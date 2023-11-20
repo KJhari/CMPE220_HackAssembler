@@ -36,6 +36,7 @@ string retCodeA(string op)
 }
 
 // returns the machine code for c instructions
+// returns the machine code for c instructions
 string retCodeC(vector<string> op)
 {
     // C instruction format = 1 11(unused) acccc ddd jjj

@@ -40,40 +40,46 @@ vector<string> &splitCodes(string line, const string delimiter, vector<string> &
 }
 
 // adds placeholders while parsing the instructions to enable easier translation
-vector<string> parser_string(string line, const string delimiter, int line_num) {
+vector<string> parser_string(string line, const string delimiter, int line_num)
+{
     vector<string> res;
-
-    try {
-        if (delimiter == "=" && (line.find(";") == string::npos)) {
+try {
+        if (delimiter == "=" && (line.find(";") == string::npos))
+        {
             res = splitCodes(line, delimiter, res);
-            if (res.size() != 2)
-                throw std::runtime_error("Invalid C-instruction format: missing comp or dest part");
             res.push_back("noJMP");
         }
-        else if (delimiter == ";" && (line.find("=") == string::npos)) {
-            // Handle instructions like D;JGT
-            if (line[0] != '0' && line[0] != 'D' && line[0] != 'A' && line[0] != 'M') {
-                throw std::runtime_error("Expected a valid dest at the beginning of instruction");
-            }
-            res.push_back(line.substr(0, line.find(';'))); // Add dest part
-            res.push_back("noComp"); // Add placeholder for comp part
-            res = splitCodes(line, delimiter, res);
-        }
-        else if ((delimiter == ";") && (line.find("=") == string::npos)) {
+
+        else if (delimiter == ";" && (line.find("=") == string::npos) && line[0] == '0')
+        {
             res.push_back("noDest");
+            vector<string> res2 = splitCodes(line, delimiter, res);
+            res = res2;
+        }
+
+        else if ((delimiter == ";") && (line.find("=") == string::npos) && (line[1] == ';'))
+        {
+            // std::cout << line << std::endl;
+            res.push_back("noDest");
+            vector<string> res2 = splitCodes(line, delimiter, res);
+            res = res2;
+        }
+
+        else if (delimiter == ";" && (line.find("=") == string::npos))
+        {
+
+            vector<string> res2 = splitCodes(line, delimiter, res);
+            res = res2;
+        }
+
+        else
+        {
             res = splitCodes(line, delimiter, res);
         }
-        else if (delimiter == ";" && (line.find("=") == string::npos)) {
-            res = splitCodes(line, delimiter, res);
-        }
-        else {
-            res = splitCodes(line, delimiter, res);
-        }
-    }
-    catch (const std::runtime_error &e) {
+        
+    } catch (const std::runtime_error &e) {
         throw std::runtime_error("Syntax error at line " + std::to_string(line_num) + ": " + e.what());
     }
-
     return res;
 }
 
